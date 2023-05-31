@@ -1,0 +1,55 @@
+public class Main
+{
+    public static void main(String[] args){
+     TADPilha p = new TADPilha (100);
+		
+		int n=10, resto;
+		
+		while (n!= 0){
+		  resto = n%2;
+		  p.empilha (resto);
+		  n = n /2;     
+		}
+		System.out.println ("Ao contrario");
+		p.mostraAoContrario ();
+
+		System.out.println ("normal");
+		p.mostra();
+		    
+    } 
+    
+    
+    ublic class TADPilha
+{
+  int dados[];
+  int topo;
+  int capacidade;
+
+  public TADPilha (int c)
+  {
+    capacidade = c;
+    topo = -1;
+    dados = new int[capacidade];
+
+  }
+
+  public boolean empilha (int x)
+  {
+    topo++;
+    dados[topo] = x;
+    return true;
+
+  }
+  public void mostraAoContrario ()
+  {
+    for (int i = topo; i >= 0; i--)
+      System.out.println (dados[i]);
+  }
+  public void mostra ()
+  {
+    for (int i = 0; i <= topo; i++)
+      System.out.println (dados[i]);
+
+  }
+
+}
