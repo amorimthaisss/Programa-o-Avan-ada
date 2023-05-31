@@ -1,7 +1,6 @@
 public class Main {
 
 	public static void main(String[] args) {
-		// Criar uma pilha p - chamando o CONSTRUTOR
 		TADPilha p = new TADPilha (100);
 		
 		int n=10, resto;
@@ -13,27 +12,22 @@ public class Main {
 		}
 		System.out.println ("Ao contrario");
 		p.mostraAoContrario();
-		//System.out.println ("Normal");
-		//p.mostra();
 		System.out.println ("A pilha p tem " + 
 		                    p.conta() + " elementos");
 	}
 }
 
 public class TADPilha {
-    // atributos
     int dados[];
     int topo;
     int capacidade;
-    
-    // Construtor 
+   
     public TADPilha (int c) {
        capacidade = c;
        topo = -1;
        dados = new int [capacidade];
     }
 
-    // métodos
     public boolean empilha(int x) {
         if (!cheia()) {
            topo++;  // topo = topo + 1;
