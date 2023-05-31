@@ -1,0 +1,64 @@
+ublic class Main
+{
+	public static void main(String[] args) {
+	    Triangulo x = new Triangulo (7, 7, 7);
+	    
+	    if (x.formaTriangulo () ==0) {
+	    System.out.println ("Os valores não formam um triangulo");
+	  }
+	  else {
+	    System.out.println ("Os valores  formam um triangulo"); 
+	    x.mostraTipo();
+	    System.out.println ("Perimetro=" + x.perimetro());
+	  }
+	}
+}
+
+
+public class Triangulo  {
+   
+    int ladoa;
+    int ladob;
+    int ladoc;
+    
+    public Triangulo (int a, int b, int c) {
+        ladoa = a;
+        ladob = b;
+        ladoc = c;
+    }
+   
+    public int formaTriangulo  {
+        
+        int aux = 0; // nao eh um triangulo
+        
+        if ( ladoa > diferenca(ladob,ladoc) &&
+             ladob > diferenca(ladoa,ladoc) &&
+             ladoc > diferenca(ladoa,ladob) &&
+       
+             ladoa < ladob + ladoc &&
+             ladob < ladoa + ladoc &&
+             ladoc < ladoa + ladob
+          )
+          aux = 1; // eh um triangulo
+    
+        return aux;
+    }
+    public void mostraTipo() {
+        if (ladoa == ladob && ladoa == ladoc) System.out.println ("Equilatero");
+        else if (ladoa != ladob && ladoa != ladoc && ladob != ladoc) {
+            System.out.println ("Escaleno");
+        }
+             else System.out.println ("Isosceles");
+        
+    }
+    private int diferenca (int a, int b) {
+    
+        int aux;
+        aux = b-a;
+        if (aux < 0) aux = aux * (-1);
+        return aux;  
+    }
+    public int perimetro () {
+       return ladoa + ladob + ladoc; 
+    }
+} 
